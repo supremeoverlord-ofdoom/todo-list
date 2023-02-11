@@ -9,13 +9,18 @@ function App() {
     "Build really cool todo app",
   ]);
   
+  const addTodo = (text) => {
+    const newTodos = [...todos, text];
+    setTodos(newTodos);
+  };
+
   return (
       <div>
       <h1>My todo list</h1>
       {todos.map((todo, index) => (  //loops over the list f- for every item in this list give me a to do item
       <TodoItem todo={todo} key={index} />
       ))}
-      <TodoForm />
+      <TodoForm addTodo={addTodo} />
       </div>
     );
   }
