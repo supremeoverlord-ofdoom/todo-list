@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import TodoItem from "./components/TodoItem";
 import TodoForm from "./components/TodoForm";
+import "./App.css";
 
 function App() {
   const [todos, setTodos] = useState([
@@ -15,12 +16,14 @@ function App() {
   };
 
   return (
-      <div>
+      <div className="app">
+      <div className="todo-list">
       <h1>My todo list</h1>
       {todos.map((todo, index) => (  //loops over the list f- for every item in this list give me a to do item
       <TodoItem todo={todo} key={index} />
       ))}
       <TodoForm addTodo={addTodo} />
+      </div>
       </div>
     );
   }
